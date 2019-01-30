@@ -14,7 +14,7 @@ I built this after writing my own ShareX (image / code / link) API in Blazor, ju
 ```
 
 * Add the `MonacoEditor` Component anywhere in your file
-```csharp
+```html
 <MonacoEditor ref="_editor" EditorModel="@_editorModel" Width="500" Height="500" />
 
 // or
