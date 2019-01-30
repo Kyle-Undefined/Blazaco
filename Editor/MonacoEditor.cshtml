@@ -2,17 +2,17 @@
 
 @if (FullScreen)
 {
-    <div id="@EditorModel.Id" style="width: 100%; height: 100vh; display: flex;"></div>
+    <div id="@Model.Id" style="width: 100%; height: 100vh; display: flex;"></div>
 }
 else
 {
-    <div id="@EditorModel.Id" style="width: @(Width)px; height: @(Height)px;"></div>
+    <div id="@Model.Id" style="width: @(Width)px; height: @(Height)px;"></div>
 }
 
 @functions {
 
     [Parameter]
-    EditorModel EditorModel { get; set; }
+    EditorModel Model { get; set; }
 
     [Parameter]
     int Width { get; set; } = 800;
@@ -23,30 +23,28 @@ else
     [Parameter]
     bool FullScreen { get; set; }
 
-    bool _alreadyRendered = false;
+    private bool _alreadyRendered = false;
 
     protected override async Task OnAfterRenderAsync()
     {
         if (!_alreadyRendered)
         {
-            _alreadyRendered = await BlazacoInterop.InitializeEditor(EditorModel);
+            _alreadyRendered = await BlazacoJSInterop.InitializeEditor(Model);
         }
     }
 
-    public async Task<EditorModel> GetValue()
+    public async Task<string> GetValue()
     {
-        return await BlazacoInterop.GetValue(EditorModel);
+        return await BlazacoJSInterop.GetValue(Model.Id);
     }
 
-    public async Task<EditorModel> SetValue(string newValue)
+    public async Task<bool> SetValue(string newValue)
     {
-        EditorModel.Value = newValue;
-        return await BlazacoInterop.SetValue(EditorModel);
+        return await BlazacoJSInterop.SetValue(Model.Id, newValue);
     }
 
-    public async Task<EditorModel> SetTheme(string newTheme)
+    public async Task<bool> SetTheme(string newTheme)
     {
-        EditorModel.Theme = newTheme;
-        return await BlazacoInterop.SetTheme(EditorModel);
+        return await BlazacoJSInterop.SetTheme(Model.Id, newTheme);
     }
 }

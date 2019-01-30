@@ -16,11 +16,11 @@ I built this after writing my own ShareX (image / code / link) API in Blazor, ju
 
 * Add the `MonacoEditor` Component anywhere in your file
 ```html
-<MonacoEditor ref="_editor" EditorModel="@_editorModel" Width="500" Height="500" />
+<MonacoEditor ref="_editor" Model="@_editorModel" Width="500" Height="500" />
 
 // or
 
-<MonacoEditor ref="_editor" EditorModel="@_editorModel" FullScreen="true" />
+<MonacoEditor ref="_editor" Model="@_editorModel" FullScreen="true" />
 ```
 _Note: You can have a set Width / Height (Defaults to 800 / 600) or have a Fullscreen mode_
 
