@@ -7,12 +7,24 @@
     <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
     <LangVersion>7.3</LangVersion>
     <TypeScriptToolsVersion>3.2</TypeScriptToolsVersion>
+    <Authors>Kyle Undefined</Authors>
+    <Company>Undefined Labs</Company>
+    <Description>A Blazor Component utilizing the Monaco editor by Microsoft</Description>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright 2019 (c) Kyle Undefined. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/Kyle-Undefined/Blazaco</RepositoryUrl>
+    <VersionPrefix>0.1</VersionPrefix>
+    <PackageLicenseUrl>https://github.com/Kyle-Undefined/Blazaco/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Kyle-Undefined/Blazaco</PackageProjectUrl>
+    <PackageReleaseNotes>Pre-release, subject to change</PackageReleaseNotes>
+	<PackageTags>Blazor Components;Monaco;Blazor</PackageTags>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
   
   <ItemGroup>
-    <EmbeddedResource Include="dist\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
-    <EmbeddedResource Include="dist\**\*.css" LogicalName="blazor:css:%(RecursiveDir)%(Filename)%(Extension)" />
-    <EmbeddedResource Include="dist\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**\*.css" LogicalName="blazor:css:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   
   <ItemGroup>

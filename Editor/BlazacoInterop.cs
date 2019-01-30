@@ -1,7 +1,7 @@
 ﻿using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace Blazaco
+namespace Blazaco.Editor
 {
 	public static class BlazacoInterop
     {

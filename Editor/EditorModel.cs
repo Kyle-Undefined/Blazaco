@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blazaco
+namespace Blazaco.Editor
 {
 	public class EditorModel
 	{

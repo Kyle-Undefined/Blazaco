@@ -8,9 +8,10 @@ I built this after writing my own ShareX (image / code / link) API in Blazor, ju
 * .NET Core 2.1.5 or later
 
 ## Usage
-* Add the using directives at the top of your page
+* Add the following to your root `_ViewImports.cshtml` file, or any file you want to use the Monaco Editor
 ```csharp
-@using Blazaco
+@using Blazaco.Editor
+@addTagHelper *,Blazaco
 ```
 
 * Add the `MonacoEditor` Component anywhere in your file
@@ -79,11 +80,6 @@ _Note: You can configure the Constructor Options based on [these](https://micros
     <script type="blazor-boot">
     </script>
 </body>
-```
-
-* Add the following to your root `_ViewImports.cshtml` file, or any page you're using the editor
-```csharp
-@addTagHelper *,Blazaco
 ```
 
 ## Interop
