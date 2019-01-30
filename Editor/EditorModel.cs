@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Blazaco.Editor.Options;
+using System;
 
 namespace Blazaco.Editor
 {
 	public class EditorModel
 	{
-        public string Id { get; set; } = $"Blazaco_{new Random().Next(0, 1000000).ToString()}";
+        public EditorModel() { }
 
-        public string Language { get; set; } = string.Empty;
-        public string Theme { get; set; } = "vs";
-        public string Value { get; set; } = string.Empty;
+        public EditorModel(EditorOptions options)
+        {
+            Options = options;
+        }
+
+        public string Id { get; set; } = $"Blazaco_{new Random().Next(0, 1000000).ToString()}";
+        public EditorOptions Options { get; set; } = new EditorOptions();
     }
 }

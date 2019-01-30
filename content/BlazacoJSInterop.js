@@ -3,15 +3,7 @@ window.Blazaco.Editors = [];
 
 window.Blazaco.JSInterop = {
     InitializeEditor: function (model) {
-        let thisEditor = monaco.editor.create(document.getElementById(model.id), {
-            automaticLayout: true,
-            language: model.language,
-            theme: model.theme,
-            value: model.value,
-            minimap: {
-                enabled: true
-            }
-        });
+        let thisEditor = monaco.editor.create(document.getElementById(model.id), model.options);
         if (window.Blazaco.Editors.find(e => e.id === model.id)) {
             return false;
         }
@@ -20,7 +12,6 @@ window.Blazaco.JSInterop = {
         }
         return true;
     },
-
     GetValue: function (id) {
         let myEditor = window.Blazaco.Editors.find(e => e.id === id);
         if (!myEditor) {
@@ -28,7 +19,6 @@ window.Blazaco.JSInterop = {
         }
         return myEditor.editor.getValue();
     },
-
     SetValue: function (id, value) {
         let myEditor = window.Blazaco.Editors.find(e => e.id === id);
         if (!myEditor) {
@@ -37,7 +27,6 @@ window.Blazaco.JSInterop = {
         myEditor.editor.setValue(value);
         return true;
     },
-
     SetTheme: function (id, theme) {
         let myEditor = window.Blazaco.Editors.find(e => e.id === id);
         if (!myEditor) {
