@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Blazor.Components
+
+@if (FullScreen)
+{
+    <div id="@EditorModel.Id" style="width: 100%; height: 100vh; display: flex;"></div>
+}
+else
+{
+    <div id="@EditorModel.Id" style="width: @(Width)px; height: @(Height)px;"></div>
+}
+
+@functions {
+
+    [Parameter]
+    EditorModel EditorModel { get; set; }
+
+    [Parameter]
+    int Width { get; set; } = 800;
+
+    [Parameter]
+    int Height { get; set; } = 600;
+
+    [Parameter]
+    bool FullScreen { get; set; }
+
+    bool _alreadyRendered = false;
+
+    protected override async Task OnAfterRenderAsync()
+    {
+        if (!_alreadyRendered)
+        {
+            _alreadyRendered = await BlazacoInterop.InitializeEditor(EditorModel);
+        }
+    }
+
+    public async Task<EditorModel> GetValue()
+    {
+        return await BlazacoInterop.GetValue(EditorModel);
+    }
+
+    public async Task<EditorModel> SetValue(string newValue)
+    {
+        EditorModel.Value = newValue;
+        return await BlazacoInterop.SetValue(EditorModel);
+    }
+
+    public async Task<EditorModel> SetTheme(string newTheme)
+    {
+        EditorModel.Theme = newTheme;
+        return await BlazacoInterop.SetTheme(EditorModel);
+    }
+}
