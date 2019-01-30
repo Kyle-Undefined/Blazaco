@@ -1,20 +1,28 @@
-﻿trigger:
-- master
+﻿  resources:
+- repo: self
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: Hosted VS2017
+  demands: msbuild
 
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: 'release'
 
 steps:
 - task: DotNetCoreInstaller@0
+  displayName: 'Use .NET Core sdk 2.1.503'
   inputs:
-    packageType: 'sdk'
-    version: '2.1.500'
-    
-- script: dotnet restore
-  displayName: 'dotnet restore'
+    version: 2.1.503
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 4.9.3'
+  inputs:
+    versionSpec: 4.9.3
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+
+- task: MSBuild@1
+  displayName: 'Build solution **/*.sln'
+  inputs:
+    configuration: $(buildConfiguration)
