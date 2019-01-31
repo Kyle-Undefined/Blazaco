@@ -15,4 +15,8 @@
     <DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="0.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Blazaco\Blazaco.csproj" />
+  </ItemGroup>
+
 </Project>

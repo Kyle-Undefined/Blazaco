@@ -1,0 +1,26 @@
+﻿@page "/fullscreen"
+
+<MonacoEditor ref="_editor" Model="@_editorModel" FullScreen="true" />
+
+@functions
+{
+    private EditorModel _editorModel { get; set; }
+    private MonacoEditor _editor;
+
+    protected override async Task OnInitAsync()
+    {
+        var options = new EditorOptions()
+        {
+            Value = @"// Your code here!
+// I'm set to `csharp` lang, and `vs-dark` theme through EditorOptions
+// Also, the ContextMenu is disabled, and the size of the editor flows with browser",
+            Language = "csharp",
+            Theme = "vs-dark",
+            AutomaticLayout = true,
+            Contextmenu = false
+        };
+
+        _editorModel = new EditorModel(options);
+        await base.OnAfterRenderAsync();
+    }
+}

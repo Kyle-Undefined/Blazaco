@@ -16,7 +16,7 @@
         public int CodeActionsOnSaveTimeout { get; set; }
         public bool CodeLens { get; set; } = true;
         public bool ColorDecorators { get; set; }
-        public bool ContextMenu { get; set; } = true;
+        public bool Contextmenu { get; set; } = true;
         public bool CopyWithSyntaxHighlighting { get; set; }
         public string CursorBlinking { get; set; } = "blink";
         public string CursorStyle { get; set; } = "line";
