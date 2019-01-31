@@ -25,7 +25,7 @@ I built this after writing my own ShareX (image / code / link) API in Blazor, ju
 ```
 _Note: You can have a set Width / Height (Defaults to 800 / 600) or have a Fullscreen mode_
 
-* Add your field and property to your `@functions`
+* Add your `MonacoEditor` and `EditorModel` fields to your `@functions`
 ```csharp
 private EditorModel _editorModel { get; set; }
 private MonacoEditor _editor;
