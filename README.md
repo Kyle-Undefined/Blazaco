@@ -31,64 +31,52 @@ private EditorModel _editorModel { get; set; }
 private MonacoEditor _editor;
 ```
 
-* Configure Blazaco settings
+* Configure Blazaco settings in your `OnInit` or `OnInitAsync`
 ```csharp
-protected override void OnInit()
-{
-    _editorModel = new EditorModel(); // Uses defaults
-}
+_editorModel = new EditorModel(); // Uses defaults
 
 // or
 
-protected override void OnInit()
+var options = new EditorOptions()
 {
-    var options = new EditorOptions()
-    {
-        Value = "// Your Code Here!",
-        Language = "csharp",
-        Theme = "vs-dark"
-    };
+    Value = "// Your Code Here!",
+    Language = "csharp",
+    Theme = "vs-dark"
+};
 
-    _editorModel = new EditorModel(options);
-}
+_editorModel = new EditorModel(options);
 
 // or
 
-protected override void OnInit()
+var options = new EditorOptions()
 {
-	var options = new EditorOptions()
-    {
-        Value = "// Your Code Here!",
-        Language = "csharp",
-        Theme = "vs-dark",
-		Minimap = new MinimapOptions()
-		{
-			Enabled = false
-		}
-    };
+	Value = "// Your Code Here!",
+	Language = "csharp",
+	Theme = "vs-dark",
+	Minimap = new MinimapOptions()
+	{
+		Enabled = false
+	}
+};
 
-    _editorModel = new EditorModel(options);
-}
+_editorModel = new EditorModel(options);
 
 // or
 
-protected override void OnInit()
+_editorModel = new EditorModel(new EditorOptions()
 {
-    _editorModel = new EditorModel(new EditorOptions()
-    {
-        Value = "// Your Code Here!",
-        Language = "csharp",
-        Theme = "vs-dark",
-		Minimap = new MinimapOptions()
-		{
-			Enabled = false
-		}
-    });
-}
+	Value = "// Your Code Here!",
+	Language = "csharp",
+	Theme = "vs-dark",
+	Minimap = new MinimapOptions()
+	{
+		Enabled = false
+	}
+});
 ```
 _Note: You can configure the Constructor Options based on [these](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html) options_
 
-* Add the `monaco-editor` [folder](https://github.com/Kyle-Undefined/Blazaco/tree/master/monaco-editor) and link the Javascript and CSS files in your `index.html` file
+* Add the `monaco-editor` [folder](https://github.com/Kyle-Undefined/Blazaco/tree/master/test/BlazacoTestApp/wwwroot/monaco-editor) and link the Javascript and CSS files in your `index.html` file
 ```html
 <head>
     <link rel="stylesheet" data-name="vs/editor/editor.main" href="monaco-editor/min/vs/editor/editor.main.css">
