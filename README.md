@@ -10,6 +10,8 @@ I built this after writing my own ShareX (image / code / link) API in Blazor, ju
 ## Status
 <a href="https://kyleundefined.visualstudio.com/Blazaco/_build"><img src="https://kyleundefined.visualstudio.com/Blazaco/_apis/build/status/Blazaco-CI"/></a>
 
+<a href="https://kyle-undefined.github.io/Blazaco/"><img src="https://forthebadge.com/images/badges/check-it-out.svg" /></a>
+
 ## Usage
 * Add the following to your root `_ViewImports.cshtml` file, or any file you want to use the Monaco Editor
 ```csharp
