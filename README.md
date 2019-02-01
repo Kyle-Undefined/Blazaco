@@ -1,18 +1,26 @@
-## Blazaco
+# Blazaco <a href="https://kyleundefined.visualstudio.com/Blazaco/_build"><img src="https://kyleundefined.visualstudio.com/Blazaco/_apis/build/status/Blazaco-CI"/></a> <a href="https://www.nuget.org/packages/Blazaco/"><img src="https://buildstats.info/nuget/Blazaco" /></a>
 A Blazor Component utilizing the Monaco editor by Microsoft, inspired by [BlazorBits](https://github.com/BlazorBits/BlazorBits). Built and tested for Blazor version 0.7.0.
 
 I built this after writing my own ShareX (image / code / link) API in Blazor, just seeing what all it's capable of, and was looking for a way to style the code page. Found the BlazorBits but noticed it wasn't on Nuget anymore and was outdated, so decided to build an updated version. Any feedback would greatly be appreciated.
 
-## Blazor dependencies
+# Blazor dependencies
 * Visual Studio 15.9 or later
 * .NET Core 2.1.5 or later
 
-## Status
-<a href="https://kyleundefined.visualstudio.com/Blazaco/_build"><img src="https://kyleundefined.visualstudio.com/Blazaco/_apis/build/status/Blazaco-CI"/></a>
-
+# Demo
 <a href="https://kyle-undefined.github.io/Blazaco/"><img src="https://forthebadge.com/images/badges/check-it-out.svg" /></a>
 
-## Usage
+# Installation
+  * Add the [NuGet](https://www.nuget.org/packages/Blazaco/) package to your Blazor Client project
+```
+dotnet add package Blazaco
+
+// or
+
+Install-Package Blazaco
+```
+
+# Usage
 * Add the following to your root `_ViewImports.cshtml` file, or any file you want to use the Monaco Editor
 ```csharp
 @using Blazaco.Editor
@@ -100,7 +108,7 @@ _Note: You can configure the Constructor Options based on [these](https://micros
 </body>
 ```
 
-## Interop
+# Interop
 Currently I've only created a handful of Methods for Interop, as that's all I really need for my purposes. May add more in the future.
 
 * `InitializeEditor`
@@ -112,5 +120,8 @@ Currently I've only created a handful of Methods for Interop, as that's all I re
 * `SetTheme`
   * Sets the Theme for the Monaco Editor
 
-## Copyright
+# Change log
+  * History and changes can be located in the [CHANGELOG.md](https://github.com/Kyle-Undefined/Blazaco/blob/master/CHANGELOG.md)
+
+# Copyright
 Copyright (c) 2019 Kyle Undefined under the MIT License.

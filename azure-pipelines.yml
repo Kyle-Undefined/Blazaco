@@ -1,9 +1,19 @@
+trigger:
+- master
+
 pool:
   vmImage: 'VS2017-Win2016'
 
 variables:
   buildConfiguration: 'Release'
+  major: 1
+  minor: 0
+  patch: $[counter('versioncounter', 0)]
 
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+steps:   
+- script: |
+    dotnet restore
+    dotnet build -c $(buildConfiguration)
+    dotnet pack src/Blazaco/Blazaco.csproj -c $(buildConfiguration) /p:PackageVersion=$(major).$(minor).$(patch) --output $(Build.ArtifactStagingDirectory) --no-build --no-restore
+ 
+- task: PublishBuildArtifacts@1
