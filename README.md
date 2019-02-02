@@ -89,7 +89,7 @@ _editorModel = new EditorModel(new EditorOptions()
 ```
 _Note: You can configure the Constructor Options based on [these](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html) options_
 
-* Add the `monaco-editor` [folder](https://github.com/Kyle-Undefined/Blazaco/tree/master/test/BlazacoTestApp/wwwroot/monaco-editor) and link the Javascript and CSS files in your `index.html` file
+* Add the `monaco-editor` [folder](https://github.com/Kyle-Undefined/Blazaco/tree/master/samples/BlazacoTestApp/wwwroot/monaco-editor) and link the Javascript and CSS files in your `index.html` file
 ```html
 <head>
     <link rel="stylesheet" data-name="vs/editor/editor.main" href="monaco-editor/min/vs/editor/editor.main.css">
@@ -97,19 +97,18 @@ _Note: You can configure the Constructor Options based on [these](https://micros
 <body>
     <app></app>
     ...
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>var require = { paths: { 'vs': 'monaco-editor/min/vs' } };</script>
     <script src="monaco-editor/min/vs/loader.js"></script>
     <script src="monaco-editor/min/vs/editor/editor.main.nls.js"></script>
     <script src="monaco-editor/min/vs/editor/editor.main.js"></script>
     <script type="blazor-boot">
     </script>
+	...
 </body>
 ```
 
 # Interop
-Currently I've only created a handful of Methods for Interop, as that's all I really need for my purposes. May add more in the future.
+Currently I've only created a handful of Methods for Interop, as that's all I really need for my purposes. Current plans are to expand the Interop to allow more integration of the [Monaco Editor API](https://microsoft.github.io/monaco-editor/api/index.html) and make it more fleshed out.
 
 * `InitializeEditor`
   * Internal Method to Initialize the Monaco Editor with default or set settings
