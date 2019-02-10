@@ -1,7 +1,7 @@
 ﻿window.Blazaco = window.Blazaco || {};
 window.Blazaco.Editors = [];
 
-window.Blazaco.JSInterop = {
+window.Blazaco.Editor = {
     InitializeEditor: function (model) {
         let thisEditor = monaco.editor.create(document.getElementById(model.id), model.options);
         if (window.Blazaco.Editors.find(e => e.id === model.id)) {

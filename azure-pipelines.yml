@@ -7,10 +7,14 @@ pool:
 variables:
   buildConfiguration: 'Release'
   major: 1
-  minor: 0
-  patch: $[counter('versioncounter', 0)]
+  minor: 1
+  patch: $[counter('newminor190210', 0)]
 
-steps:   
+steps:
+- task: DotNetCoreInstaller@0
+  inputs:
+    version: 3.0.100-preview-010184
+    
 - script: |
     dotnet restore
     dotnet build -c $(buildConfiguration)

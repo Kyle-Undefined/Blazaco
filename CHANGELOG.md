@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.0
+* Updated Blazaco, Samples, and Docs to Blazor version 0.8.0-preview-19104-04
+* Changed the JS Interop naming
+
 ## 1.0.1
 * Changed /test/ to /samples/ for better naming scheme, since /test/ was not Tests
 * Updated README link for /monaco-editor/, Interop section, and removed the highlight.js/css links
