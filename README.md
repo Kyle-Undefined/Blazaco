@@ -4,8 +4,8 @@ A Blazor Component utilizing the Monaco editor by Microsoft, inspired by [Blazor
 I built this after writing my own ShareX (image / code / link) API in Blazor, just seeing what all it's capable of, and was looking for a way to style the code page. Found the BlazorBits but noticed it wasn't on Nuget anymore and was outdated, so decided to build an updated version. Any feedback would greatly be appreciated.
 
 # Blazaco dependencies
-* Visual Studio 16.0.0 Preview 2.2
-* .NET Core 3.0.0-preview-19075-0444
+* Visual Studio 16.1.0 Preview 3
+* .NET Core 3.0.100-preview5-011568
 
 # Demo
 <a href="https://kyle-undefined.github.io/Blazaco/"><img src="https://forthebadge.com/images/badges/check-it-out.svg" /></a>
@@ -23,9 +23,9 @@ Install-Package Blazaco
 # Usage
 * Add the following to your root `_ViewImports.cshtml` file, or any file you want to use the Monaco Editor
 ```csharp
+@using Blazaco
 @using Blazaco.Editor
 @using Blazaco.Editor.Options // Only needed if you want to change defaults
-@addTagHelper *,Blazaco
 ```
 
 * Add the `MonacoEditor` Component anywhere in your file

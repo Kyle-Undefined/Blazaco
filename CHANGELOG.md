@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.2.0
+* Updated Blazaco, Samples, and Docs to Blazor version 3.0.100-preview5-011568
+
 ## 1.1.0
 * Updated Blazaco, Samples, and Docs to Blazor version 0.8.0-preview-19104-04
 * Changed the JS Interop naming
