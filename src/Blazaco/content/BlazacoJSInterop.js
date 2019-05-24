@@ -34,5 +34,13 @@ window.Blazaco.Editor = {
         }
         monaco.editor.setTheme(theme);
         return true;
+    },
+    Layout: function (id) {
+        let myEditor = window.Blazaco.Editors.find(e => e.id === id);
+        if (!myEditor) {
+            throw `Could not find a editor with id: '${window.Blazaco.Editors.length}' '${id}'`;
+        }
+        monaco.editor.layout()
+        return true;
     }
 }

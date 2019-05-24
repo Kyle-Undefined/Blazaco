@@ -51,4 +51,9 @@ else
     {
         return await BlazacoJSInterop.SetTheme(runtime, Model.Id, newTheme);
     }
+
+    public async Task<bool> Layout()
+    {
+        return await BlazacoJSInterop.Layout(runtime, Model.Id);
+    }
 }

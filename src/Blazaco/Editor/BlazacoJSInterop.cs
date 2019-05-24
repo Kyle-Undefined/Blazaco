@@ -16,5 +16,8 @@ namespace Blazaco.Editor
 
         public static Task<bool> SetTheme(IJSRuntime runtime, string id, string theme)
             => runtime.InvokeAsync<bool>("Blazaco.Editor.SetTheme", new[] { id, theme });
+
+        public static Task<bool> Layout(IJSRuntime runtime, string id)
+            => runtime.InvokeAsync<bool>("Blazaco.Editor.Layout", new[] { id });
     }
 }
