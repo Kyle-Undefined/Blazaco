@@ -78,6 +78,8 @@ app {
 
 .content {
     padding-top: 1.1rem;
+    min-height: 1px;
+    height: calc(100vh - 3.5rem);
 }
 
 .navbar-toggler {
@@ -120,4 +122,10 @@ app {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
+}
+
+.fullscreen-editor {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
