@@ -30,13 +30,8 @@ Install-Package Blazaco
 
 * Add the `MonacoEditor` Component anywhere in your file
 ```html
-<MonacoEditor ref="_editor" Model="@_editorModel" Width="500" Height="500" />
-
-// or
-
-<MonacoEditor ref="_editor" Model="@_editorModel" FullScreen="true" />
+<MonacoEditor class="editor-class" ref="_editor" Model="@_editorModel" />
 ```
-_Note: You can have a set Width / Height (Defaults to 800 / 600) or have a Fullscreen mode_
 
 * Add your `MonacoEditor` and `EditorModel` fields to your `@functions`
 ```csharp
@@ -118,6 +113,8 @@ Currently I've only created a handful of Methods for Interop, as that's all I re
   * Sets the Value for the Monaco Editor to display
 * `SetTheme`
   * Sets the Theme for the Monaco Editor
+* `Layout`
+  * Instructs the editor to remeasure its container. This method should be called when the container of the editor gets resized
 
 # Change log
   * History and changes can be located in the [CHANGELOG.md](https://github.com/Kyle-Undefined/Blazaco/blob/master/CHANGELOG.md)
