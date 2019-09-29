@@ -1,13 +1,13 @@
 ﻿@page "/fullscreen"
 
-<MonacoEditor ref="_editor" Model="@_editorModel" FullScreen="true" />
+<MonacoEditor @ref="_editor" Model="_editorModel" FullScreen="true" />
 
 @functions
 {
     private EditorModel _editorModel { get; set; }
     private MonacoEditor _editor;
 
-    protected override async Task OnInitAsync()
+    protected override void OnInitialized()
     {
         var options = new EditorOptions()
         {
@@ -21,6 +21,5 @@
         };
 
         _editorModel = new EditorModel(options);
-        await base.OnAfterRenderAsync();
     }
 }

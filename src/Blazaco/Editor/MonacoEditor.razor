@@ -16,20 +16,20 @@ else
     IJSRuntime runtime { get; set; }
 
     [Parameter]
-    EditorModel Model { get; set; }
+    public EditorModel Model { get; set; }
 
     [Parameter]
-    int Width { get; set; } = 800;
+    public int Width { get; set; } = 800;
 
     [Parameter]
-    int Height { get; set; } = 600;
+    public int Height { get; set; } = 600;
 
     [Parameter]
-    bool FullScreen { get; set; }
+    public bool FullScreen { get; set; }
 
     private bool _alreadyRendered = false;
 
-    protected override async Task OnAfterRenderAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!_alreadyRendered)
         {
