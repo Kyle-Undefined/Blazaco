@@ -1,4 +1,6 @@
-# Blazaco <a href="https://kyleundefined.visualstudio.com/Blazaco/_build"><img src="https://kyleundefined.visualstudio.com/Blazaco/_apis/build/status/Blazaco-CI"/></a> <a href="https://www.nuget.org/packages/Blazaco/"><img src="https://buildstats.info/nuget/Blazaco" /></a>
+# Blazaco (Dead) <a href="https://kyleundefined.visualstudio.com/Blazaco/_build"><img src="https://kyleundefined.visualstudio.com/Blazaco/_apis/build/status/Blazaco-CI"/></a> <a href="https://www.nuget.org/packages/Blazaco/"><img src="https://buildstats.info/nuget/Blazaco" /></a> ![Maintainer](https://img.shields.io/badge/Maintained%3F-no-red)
+This project is dead, lost interest and life got in the way. However, there's a fantastic maintained version over at [serdarciplak/BlazorMonaco](https://github.com/serdarciplak/BlazorMonaco)
+
 A Blazor Component utilizing the Monaco editor by Microsoft, inspired by [BlazorBits](https://github.com/BlazorBits/BlazorBits). Built and tested for Blazor version 3.0.100-preview5-011568.
 
 I built this after writing my own ShareX (image / code / link) API in Blazor, just seeing what all it's capable of, and was looking for a way to style the code page. Found the BlazorBits but noticed it wasn't on Nuget anymore and was outdated, so decided to build an updated version. Any feedback would greatly be appreciated.
